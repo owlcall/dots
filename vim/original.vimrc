@@ -40,7 +40,7 @@ if has ('autocmd')
 
   " File-type specific configurations
   autocmd FileType crontab setlocal nowritebackup
-  autocmd Filetype markdown setlocal spell spelllang=en_us
+  "autocmd Filetype markdown setlocal spell spelllang=en_us
 
   " Line horizontal highlight
 	augroup LineCursor	" Handle highlighting of the current line (disable on insert)
@@ -61,6 +61,12 @@ endif
 "
 colorscheme theme
 syntax on		" Enable syntax highlighting across the board
+
+" Special syntax highlighting (agnostic of filetype)
+augroup vimrc_todo
+  au Syntax * syn match MyTodo /\v<(NOTE|NOTES|OPTIMIZE)>/ containedin=.*Comment,.*Comment.*
+augroup END
+hi def link MyTodo Todo
 
 set background=dark
 set fillchars+=vert:│

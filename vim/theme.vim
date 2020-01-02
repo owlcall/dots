@@ -72,9 +72,10 @@ else                     "Console Vim
 	let s:TEAL0   = '66'	" 
 	let s:TEAL1   = '66'	" Gutter: current line
 	let s:TEAL2   = '110'	" Syntax: functions
-	let s:ORANGE0 = '167'	" 
+	let s:ORANGE0 = '167' " dim salmon 167 (salmon 203)
 	let s:ORANGE1 = '173'	" Syntax: macros
 	let s:ORANGE2 = '208'	" 
+	let s:ORANGE3 = '203' " dim salmon 167 (salmon 203)
 	let s:LPURPLE = '103'	" Vimdiff
 	let s:PINK0   = '163'	" Done
 	let s:PINK1   = '131'	" Warnings, errors, FG/BG
@@ -124,18 +125,18 @@ exe 'hi signColumn      '.s:M.'bg='.s:GREY0  .' '.s:M.'fg='.s:GREY5  .' '.s:M.'=
 
 exe 'hi Comment         '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:GREEN1 .' '.s:M.'='.s:N
 exe 'hi Conceal         '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:GREY6  .' '.s:M.'='.s:N
-exe 'hi Constant        '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:ORANGE0.' '.s:M.'='.s:N
+exe 'hi Constant        '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:ORANGE3.' '.s:M.'='.s:N
 exe 'hi Error           '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:PINK1  .' '.s:M.'='.s:R
 exe 'hi Identifier      '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:BLUE   .' '.s:M.'='.s:N
 exe 'hi Ignore          '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:BG     .' '.s:M.'='.s:N
 exe 'hi PreProc         '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:ORANGE1.' '.s:M.'='.s:N
 exe 'hi Special         '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:BROWN0 .' '.s:M.'='.s:N
 exe 'hi Statement       '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:PINK0  .' '.s:M.'='.s:N
-exe 'hi String          '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:ORANGE0.' '.s:M.'='.s:N
+exe 'hi String          '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:ORANGE3.' '.s:M.'='.s:N
 exe 'hi Todo            '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:ORANGE2.' '.s:M.'='.s:B
 exe 'hi Type            '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:PINK0  .' '.s:M.'='.s:N
 exe 'hi Underlined      '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:TEAL0  .' '.s:M.'='.s:U
-                                                                         
+
 exe 'hi NonText         '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:GREY4  .' '.s:M.'='.s:N
 
 exe 'hi Pmenu           '.s:M.'bg='.s:GREY3  .' '.s:M.'fg='.s:GREY6  .' '.s:M.'='.s:N
