@@ -1,6 +1,7 @@
 " Author: Tim Vasko
 " Date: 2019-11-24
 " Description: Vim configuration file
+scriptencoding utf-8
 
 "
 " Plugins
@@ -41,18 +42,19 @@ if has ('autocmd')
   " File-type specific configurations
   autocmd FileType crontab setlocal nowritebackup
   "autocmd Filetype markdown setlocal spell spelllang=en_us
+  autocmd FileType python set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent
 
   " Line horizontal highlight
-	augroup LineCursor	" Handle highlighting of the current line (disable on insert)
-    autocmd WinEnter * set cursorline
-    autocmd WinLeave * set nocursorline
+	"augroup LineCursor	" Handle highlighting of the current line (disable on insert)
+    "autocmd WinEnter * set cursorline
+    "autocmd WinLeave * set nocursorline
 
-    autocmd InsertEnter * set nocursorline
-    autocmd InsertLeave * set cursorline
+    "autocmd InsertEnter * set nocursorline
+    "autocmd InsertLeave * set cursorline
 
-    autocmd FocusGained * set cursorline
-    autocmd FocusLost * set nocursorline | redraw!
-	augroup END
+    "autocmd FocusGained * set cursorline
+    "autocmd FocusLost * set nocursorline | redraw!
+	"augroup END
 endif
 
 "
@@ -140,16 +142,17 @@ set tabstop=2     " width of the TAB character
 set shiftwidth=2  " depth of single indentation level
 set softtabstop=2
 set expandtab
+set autoindent
+set smartindent
 
 set cindent     " ehnable advanced indentation tailored towards c-style languages
 set cino+=g0    " indent public/private keywords after typing colon ':'
-set autoindent
 
 " Editor display
 set relativenumber
 set number
 set hlsearch    	" Highlight search results
-set cursorline		" Highlight cursor line
+"set cursorline		" Highlight cursor line
 "set laststatus=2  " Show statusbar all the time
 "set scrolloff=1   " Scroll offset of 1 line
 set showmatch	  	" Show matching bracket
@@ -165,6 +168,8 @@ set ttimeoutlen=10
 
 " Fixes
 "-------
+" Fix tag searches (unsorted tags file errors)
+set ignorecase
 " Fix the backspace key from getting stuck on one line
 set backspace=indent,eol,start
 " Allow color schemes to do bright colors without forcing bold.

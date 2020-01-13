@@ -63,12 +63,12 @@ if (has('gui_running'))  "Graphical Vim
 
 else                     "Console Vim
   if &t_Co == 256 "Set color palette with 256 colors
-	let s:BROWN0  = '143'	" 
 	let s:BROWN1  = '101'	" Filler between borders
 	let s:GREEN0  = '108'	" Insert mode backgroun
   let s:GREEN1  = '28'	" Syntax: comments
   let s:BLUE    = '67'	" Syntax: identifiers
 	let s:YELLOW0 = '229'	" Syntax: {}
+	let s:YELLOW1 = '143'	" Syntax: constants, escape sequences
 	let s:TEAL0   = '66'	" 
 	let s:TEAL1   = '66'	" Gutter: current line
 	let s:TEAL2   = '110'	" Syntax: functions
@@ -125,12 +125,12 @@ exe 'hi signColumn      '.s:M.'bg='.s:GREY0  .' '.s:M.'fg='.s:GREY5  .' '.s:M.'=
 
 exe 'hi Comment         '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:GREEN1 .' '.s:M.'='.s:N
 exe 'hi Conceal         '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:GREY6  .' '.s:M.'='.s:N
-exe 'hi Constant        '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:ORANGE3.' '.s:M.'='.s:N
+exe 'hi Constant        '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:YELLOW1.' '.s:M.'='.s:N
 exe 'hi Error           '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:PINK1  .' '.s:M.'='.s:R
 exe 'hi Identifier      '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:BLUE   .' '.s:M.'='.s:N
 exe 'hi Ignore          '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:BG     .' '.s:M.'='.s:N
 exe 'hi PreProc         '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:ORANGE1.' '.s:M.'='.s:N
-exe 'hi Special         '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:BROWN0 .' '.s:M.'='.s:N
+exe 'hi Special         '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:YELLOW1 .' '.s:M.'='.s:N
 exe 'hi Statement       '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:PINK0  .' '.s:M.'='.s:N
 exe 'hi String          '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:ORANGE3.' '.s:M.'='.s:N
 exe 'hi Todo            '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:ORANGE2.' '.s:M.'='.s:B
@@ -162,7 +162,7 @@ exe 'hi CursorLine      '.s:M.'bg='.s:GREY2  .' '.s:M.'fg='.s:BG     .' '.s:M.'=
 exe 'hi helpLeadBlank   '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:BG     .' '.s:M.'='.s:N
 exe 'hi helpNormal      '.s:M.'bg='.s:BG     .' '.s:M.'fg='.s:BG     .' '.s:M.'='.s:N
 
-exe 'hi StatusLine      '.s:M.'bg='.s:BROWN0 .' '.s:M.'fg='.s:GREY1  .' '.s:M.'='.s:N
+exe 'hi StatusLine      '.s:M.'bg='.s:YELLOW1 .' '.s:M.'fg='.s:GREY1  .' '.s:M.'='.s:N
 exe 'hi StatusLineNC    '.s:M.'bg='.s:GREY3  .' '.s:M.'fg='.s:BROWN1 .' '.s:M.'='.s:N
 
 exe 'hi Visual          '.s:M.'bg='.s:GREY1  .' '.s:M.'fg='.s:TEAL2  .' '.s:M.'='.s:R
