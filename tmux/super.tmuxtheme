@@ -29,7 +29,7 @@ set -g status-left "#{?client_prefix,#[fg=colour124]#[reverse] #[noreverse], }#h
 # Right side of status bar
 set -g status-right-style bg=default,fg=colour245 #,default
 set -g status-right-length 150
-set -g status-right ' #{battery_status_fg}#{battery_percentage} #[fg=colour248,bg=default] %Y-%m-%d#[fg=colour253,bg=default]  %H:%M.%S '
+set -g status-right ' #{battery_status_fg}#{battery_percentage} #[fg=colour248,bg=default] %Y-%m-%d#[fg=colour253,bg=default]  %H:%M '
 #set -g status-right ' [#I/#{session_windows}] [#P:#{window_panes}] #[fg=colour254,bg=default] %Y-%m-%d#[fg=colour253,bg=default] %H:%M.%S #{battery_status_fg} #{battery_percentage}'
 
 # Pane borders
