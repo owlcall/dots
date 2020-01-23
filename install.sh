@@ -12,6 +12,8 @@ done
 mkdir -p "$install_path"
 git clone https://github.com/owlcall/dots "$install_path"
 cd "$install_path"
+git checkout master
+git pull origin master
 "$install_path/vim/activate.sh"
 "$install_path/tmux/activate.sh"
 
