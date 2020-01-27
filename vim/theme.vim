@@ -43,62 +43,89 @@ let s:N = 'none'
 let s:U = 'underline'
 
 if (has('gui_running'))  "Graphical Vim
-  "Set color palette with RGB colors
-  let s:RED    = '#EA4335'
-  let s:GREEN1  = '#34A853'
-  let s:YELLOW = '#FBBC05'
-  let s:BLUE   = '#4285F4'
-  let s:BLACK  = '#000000'
-  let s:GREY0  = '#656565'
-  let s:GREY3  = '#EEEEEE'
-  let s:WHITE  = '#FFFFFF'
+ "Set color palette with RGB colors
+ let s:RED    = '#EA4335'
+ let s:GREEN1  = '#34A853'
+ let s:YELLOW = '#FBBC05'
+ let s:BLUE   = '#4285F4'
+ let s:BLACK  = '#000000'
+ let s:GREY0  = '#656565'
+ let s:GREY3  = '#EEEEEE'
+ let s:WHITE  = '#FFFFFF'
 
-  "Set gui mode and italics
-  let s:M = 'gui'
-  let s:I = s:disable_italic ? 'none' : 'italic'
-  let s:B = 'bold'
-  let s:R = 'reverse'
-  let s:N = 'none'
-  let s:U = 'underline'
+ "Set gui mode and italics
+ let s:M = 'gui'
+ let s:I = s:disable_italic ? 'none' : 'italic'
+ let s:B = 'bold'
+ let s:R = 'reverse'
+ let s:N = 'none'
+ let s:U = 'underline'
 
 else                     "Console Vim
   if &t_Co == 256 "Set color palette with 256 colors
-	let s:BROWN1  = '101'	" Filler between borders
-	let s:GREEN0  = '108'	" Insert mode backgroun
-  let s:GREEN1  = '28'	" Syntax: comments
-  let s:BLUE    = '67'	" Syntax: identifiers
-	let s:YELLOW0 = '229'	" Syntax: {}
-	let s:YELLOW1 = '143'	" Syntax: constants, escape sequences
-	let s:TEAL0   = '66'	" 
-	let s:TEAL1   = '66'	" Gutter: current line
-	let s:TEAL2   = '110'	" Syntax: functions
-	let s:ORANGE0 = '167' " dim salmon 167 (salmon 203)
-	let s:ORANGE1 = '173'	" Syntax: macros
-	let s:ORANGE2 = '208'	" 
-	let s:ORANGE3 = '203' " dim salmon 167 (salmon 203)
-	let s:LPURPLE = '103'	" Vimdiff
-	let s:PINK0   = '163'	" Done
-	let s:PINK1   = '131'	" Warnings, errors, FG/BG
-	let s:RED0    = '161'   " YCM Errors
-  let s:GREY0   = '233'	" Gutter BG
-	let s:GREY1   = '234'	" Main BG
-	let s:GREY2   = '235'	" Current Line BG
-  let s:GREY3   = '235'	" Color Column BG
-  let s:GREY4   = '240'	" Nontext, special keys
-  let s:GREY5   = '238'	" Gutter text
-  let s:GREY6   = '250'	" Code white, cmd view color
-	let s:WHITE   = '231'	" Tab title
-  let s:WHITE1  = '247'	" Code white, cmd view color
+    let s:BROWN1  = '101'	" Filler between borders
+    let s:GREEN0  = '108'	" Insert mode backgroun
+    let s:GREEN1  = '28'	" Syntax: comments
+    let s:BLUE    = '67'	" Syntax: identifiers
+    let s:YELLOW0 = '229'	" Syntax: {}
+    let s:YELLOW1 = '143'	" Syntax: constants, escape sequences
+    let s:TEAL0   = '66'	" 
+    let s:TEAL1   = '66'	" Gutter: current line
+    let s:TEAL2   = '110'	" Syntax: functions
+    let s:ORANGE0 = '167' " dim salmon 167 (salmon 203)
+    let s:ORANGE1 = '173'	" Syntax: macros
+    let s:ORANGE2 = '208'	" 
+    let s:ORANGE3 = '203' " dim salmon 167 (salmon 203)
+    let s:LPURPLE = '103'	" Vimdiff
+    let s:PINK0   = '163'	" Done
+    let s:PINK1   = '131'	" Warnings, errors, FG/BG
+    let s:RED0    = '161'   " YCM Errors
+    let s:GREY0   = '233'	" Gutter BG
+    let s:GREY1   = '234'	" Main BG
+    let s:GREY2   = '235'	" Current Line BG
+    let s:GREY3   = '235'	" Color Column BG
+    let s:GREY4   = '240'	" Nontext, special keys
+    let s:GREY5   = '238'	" Gutter text
+    let s:GREY6   = '250'	" Code white, cmd view color
+    let s:WHITE   = '231'	" Tab title
+    let s:WHITE1  = '247'	" Code white, cmd view color
   else
-    "Set color palette with color names
-    let s:RED    = 'red'
-    let s:GREEN1  = 'green'
-    let s:YELLOW = 'yellow'
-    let s:BLUE   = 'blue'
-    let s:BLACK  = 'black'
-    let s:GREY0  = 'grey'
-    let s:GREY3  = 'grey'
-    let s:WHITE  = 'white'
+"   "Set color palette with color names
+"   let s:RED    = 'red'
+"   let s:GREEN1  = 'green'
+"   let s:YELLOW = 'yellow'
+"   let s:BLUE   = 'blue'
+"   let s:BLACK  = 'black'
+"   let s:GREY0  = 'grey'
+"   let s:GREY3  = 'grey'
+"   let s:WHITE  = 'white'
+
+    let s:BROWN1  = '101'	" Filler between borders
+    let s:GREEN0  = '108'	" Insert mode backgroun
+    let s:GREEN1  = '28'	" Syntax: comments
+    let s:BLUE    = '67'	" Syntax: identifiers
+    let s:YELLOW0 = '229'	" Syntax: {}
+    let s:YELLOW1 = '143'	" Syntax: constants, escape sequences
+    let s:TEAL0   = '66'	" 
+    let s:TEAL1   = '66'	" Gutter: current line
+    let s:TEAL2   = '110'	" Syntax: functions
+    let s:ORANGE0 = '167' " dim salmon 167 (salmon 203)
+    let s:ORANGE1 = '173'	" Syntax: macros
+    let s:ORANGE2 = '208'	" 
+    let s:ORANGE3 = '203' " dim salmon 167 (salmon 203)
+    let s:LPURPLE = '103'	" Vimdiff
+    let s:PINK0   = '163'	" Done
+    let s:PINK1   = '131'	" Warnings, errors, FG/BG
+    let s:RED0    = '161'   " YCM Errors
+    let s:GREY0   = '233'	" Gutter BG
+    let s:GREY1   = '234'	" Main BG
+    let s:GREY2   = '235'	" Current Line BG
+    let s:GREY3   = '235'	" Color Column BG
+    let s:GREY4   = '240'	" Nontext, special keys
+    let s:GREY5   = '238'	" Gutter text
+    let s:GREY6   = '250'	" Code white, cmd view color
+    let s:WHITE   = '231'	" Tab title
+    let s:WHITE1  = '247'	" Code white, cmd view color
   endif
 
   "Set terminal mode and italics (if supported)
