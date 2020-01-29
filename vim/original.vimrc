@@ -20,6 +20,7 @@ call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
   "Plugin 'airblade/vim-gitgutter'
   "Plugin 'ludovicchabant/vim-gutentags'
+  Plugin 'roxma/vim-tmux-clipboard'
   Plugin 'christoomey/vim-tmux-navigator'
   Plugin 'kien/ctrlp.vim'
   Plugin 'scrooloose/nerdcommenter'
