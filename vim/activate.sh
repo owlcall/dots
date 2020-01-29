@@ -9,13 +9,14 @@
 #DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 DIR="$( cd -P "$( dirname "$0" )" >/dev/null 2>&1 && pwd )"
 
-mkdir -p ~/.vim/colors
-mkdir -p ~/.vim/bundle
+mkdir -p "$HOME/.vim/colors"
+mkdir -p "$HOME/.vim/bundle"
 
 # Clone vundle
-if [ ! -d ~/.vim ]; then
+if [ ! -d "$HOME/.vim/bundle/Vundle" ]; then
+  echo attempting to install vundle...
   if hash git 2>/dev/null; then
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
   else
     echo git not installed, install git and try again
     exit -1
@@ -23,17 +24,17 @@ if [ ! -d ~/.vim ]; then
 fi
 
 # Install a link to the vimrc
-if [ ! -f ~/.vimrc ]; then
+if [ ! -f "$HOME/.vimrc" ]; then
   ln "$DIR/original.vimrc" $HOME/.vimrc
 else
   echo ~/.vimrc already exists, skipping vim configuration
   exit 1
 fi
 
-# Install vim plugins
-vim +PluginInstall +qall
-
 # Install themes (as symlinks)
 ln -f "$DIR/theme.vim" ~/.vim/colors/
+
+# Install vim plugins
+vim +PluginInstall +qall
 ln -f "$DIR/airtheme.vim" ~/.vim/bundle/vim-airline-themes/autoload/airline/themes/
 

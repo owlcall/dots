@@ -3,6 +3,9 @@
 " Description: Vim configuration file
 scriptencoding utf-8
 
+set nocompatible
+filetype off
+
 "
 " Plugins
 "------------------------------------------------------------------------------
@@ -10,7 +13,8 @@ scriptencoding utf-8
 " Vundle is cloned from https://github.com/VundleVim/Vundle.vim.git
 "
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+"set rtp+=",$HOME/.vim/bundle/Vundle.vim"
+set runtimepath=~/.vim/bundle/Vundle.vim,$VIMRUNTIME
 
 call vundle#begin()
   Plugin 'gmarik/Vundle.vim'
