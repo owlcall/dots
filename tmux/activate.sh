@@ -16,7 +16,7 @@ if [ ! -f "$HOME/.tmux.conf" ]; then
   echo "" >> "$HOME/.tmux.conf"
 else
   echo ~/.tmux.conf already exists, skipping tmux configuration
-  exit 1
+  #exit 1
 fi
 
 # Clone battery plugin
