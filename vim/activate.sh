@@ -12,13 +12,17 @@ DIR="$( cd -P "$( dirname "$0" )" >/dev/null 2>&1 && pwd )"
 mkdir -p "$HOME/.vim/colors"
 mkdir -p "$HOME/.vim/bundle"
 
+#[ ! -d "/Users/owl/.vim/bundle/Vundle" ]
+#echo $?
+#echo "$HOME/.vim/bundle/Vundle"
+
 # Clone vundle
-if [ ! -d "$HOME/.vim/bundle/Vundle" ]; then
+if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
   echo attempting to install vundle...
   if hash git 2>/dev/null; then
     git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
   else
-    echo git not installed, install git and try again
+    echo error: git not installed, install git and try again
     exit -1
   fi
 fi
@@ -27,8 +31,7 @@ fi
 if [ ! -f "$HOME/.vimrc" ]; then
   ln "$DIR/original.vimrc" $HOME/.vimrc
 else
-  echo ~/.vimrc already exists, skipping vim configuration
-  exit 1
+  echo note: ~/.vimrc already exists, skipping ~/.vimrc configuration
 fi
 
 # Install themes (as symlinks)
