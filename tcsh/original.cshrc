@@ -26,17 +26,17 @@ setenv  BLOCKSIZE  K
 
 set grey_bg   = "%{\033[48;5;236m%}"
 set orange_fg = "%{\033[38;5;202m%}"
-set cyan_fg   = "%{\033[38;5;032%}"
+set cyan_fg   = "%{\033[38;5;032m%}"
 set end       = "%{\033[0m%}"
 
 if ($?prompt) then
   set P_NORMAL="${end}${grey_bg}"
   if (`whoami` == 'root' || `whoami` == 'toor') then
     set P_COLOR="${grey_bg}%{$orange_fg%}"
-    set P_SYMBOL="#"
+    set P_SYMBOL='#'
   else
     set P_COLOR="${grey_bg}%{$cyan_fg%}"
-    set P_SYMBOL="$"
+    set P_SYMBOL='$'
   endif
 
   set P_PREFIX = "${grey_bg}${P_COLOR}[${P_NORMAL}%m${P_COLOR}]${P_NORMAL}"
