@@ -9,8 +9,17 @@
 #DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 DIR="$( cd -P "$( dirname "$0" )" >/dev/null 2>&1 && pwd )"
 
-mkdir -p "$HOME/.vim/colors"
-mkdir -p "$HOME/.vim/bundle"
+if [ ! -d "$HOME/.vim/bundle" ]; then
+  mkdir -p "$HOME/.vim/bundle"
+else
+  echo note: vim bundle dir already exists, skipping bundle directory creation
+fi
+
+if [ ! -d "$HOME/.vim/colors" ]; then
+  mkdir -p "$HOME/.vim/colors"
+else
+  echo note: vim colors dir already exists, skipping colors directory creation
+fi
 
 #[ ! -d "/Users/owl/.vim/bundle/Vundle" ]
 #echo $?
