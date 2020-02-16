@@ -7,7 +7,14 @@ if [ ! -f "$HOME/.cshrc" ]; then
   ln "$DIR/original.cshrc" $HOME/.cshrc
   echo changed: symlinked "$HOME/.cshrc" tcsh configuration
 else
-  echo note: ~/.cshrc already exists, skipping csh onfiguration
+  if [ ! -f "$HOME/.cshrc.old" ]; then
+    mv "$HOME/.cshrc" "$HOME/.cshrc.old"
+    echo changed: backed up ~/.cshrc to "$HOME/.cshrc.old"
+    ln "$DIR/original.cshrc" $HOME/.cshrc
+    echo changed: symlinked new "$HOME/.cshrc" tcsh configuration
+  else
+    echo note: ~/.cshrc already exists, skipping csh onfiguration
+  fi
 fi
 
 
