@@ -11,12 +11,14 @@ DIR="$( cd -P "$( dirname "$0" )" >/dev/null 2>&1 && pwd )"
 
 if [ ! -d "$HOME/.vim/bundle" ]; then
   mkdir -p "$HOME/.vim/bundle"
+  echo changed: created "$HOME/.vim/bundle"
 else
   echo note: vim bundle dir already exists, skipping bundle directory creation
 fi
 
 if [ ! -d "$HOME/.vim/colors" ]; then
   mkdir -p "$HOME/.vim/colors"
+  echo changed: created "$HOME/.vim/colors"
 else
   echo note: vim colors dir already exists, skipping colors directory creation
 fi
@@ -30,6 +32,7 @@ if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
   echo attempting to install vundle...
   if hash git 2>/dev/null; then
     git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
+    echo changed: cloned Vundle.vim
   else
     echo error: git not installed, install git and try again
     exit -1
@@ -39,6 +42,7 @@ fi
 # Install themes (as symlinks)
 if [ ! -f "$DIR/theme.vim" ]; then
   ln -f "$DIR/theme.vim" ~/.vim/colors/
+  echo changed: simlinked "$DIR/theme.vim"
 else
   echo note: theme.vim already exists, skipping theme configuration
 fi
@@ -46,6 +50,7 @@ fi
 # Install a link to the vimrc
 if [ ! -f "$HOME/.vimrc" ]; then
   ln "$DIR/original.vimrc" $HOME/.vimrc
+  echo changed: simlinked "$HOME/.vimrc"
   vim +PluginInstall +qall
 else
   echo note: ~/.vimrc already exists, skipping ~/.vimrc configuration
@@ -54,6 +59,7 @@ fi
 # Install vim plugins
 if [ ! -f "$DIR/airtheme.vim" ]; then
   ln -f "$DIR/airtheme.vim" ~/.vim/bundle/vim-airline-themes/autoload/airline/themes/
+  echo changed: simlinked "$DIR/airtheme.vim"
 else
   echo note: airtheme.vim already exists, skipping airline theme configuration
 fi
