@@ -51,7 +51,7 @@ fi
 if [ ! -f "$HOME/.vimrc" ]; then
   ln "$DIR/original.vimrc" "$HOME/.vimrc"
   echo changed: simlinked "$HOME/.vimrc"
-  vim +PluginInstall +qall > /dev/null
+  vim +PluginInstall +qall
 else
   echo note: ~/.vimrc already exists, skipping ~/.vimrc configuration
 fi
