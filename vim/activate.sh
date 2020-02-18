@@ -41,7 +41,7 @@ fi
 
 # Install themes (as symlinks)
 if [ ! -f "$HOME/.vim/colors/theme.vim" ]; then
-  ln "$DIR/theme.vim" "$HOME/.vim/colors/"
+  ln "$DIR/theme.vim" $HOME/.vim/colors/
   echo changed: simlinked "$DIR/theme.vim"
 else
   echo note: theme.vim already exists, skipping theme configuration
@@ -49,7 +49,7 @@ fi
 
 # Install a link to the vimrc
 if [ ! -f "$HOME/.vimrc" ]; then
-  ln "$DIR/original.vimrc" "$HOME/.vimrc"
+  ln "$DIR/original.vimrc" $HOME/.vimrc
   echo changed: simlinked "$HOME/.vimrc"
   vim +PluginInstall +qall
 else
@@ -58,7 +58,7 @@ fi
 
 # Install vim plugins
 if [ ! -f "$HOME/.vim/bundle/vim-airline-themes/autoload/airline/themes/airtheme.vim" ]; then
-  ln "$DIR/airtheme.vim" "$HOME/.vim/bundle/vim-airline-themes/autoload/airline/themes/"
+  ln "$DIR/airtheme.vim" $HOME/.vim/bundle/vim-airline-themes/autoload/airline/themes/
   echo changed: simlinked "$DIR/airtheme.vim"
 else
   echo note: airtheme.vim already exists, skipping airline theme configuration
