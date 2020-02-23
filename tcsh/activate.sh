@@ -2,6 +2,11 @@
 
 DIR="$( cd -P "$( dirname "$0" )" >/dev/null 2>&1 && pwd )"
 
+if cmp --silent "$HOME/.cshrc" "$DIR/original.cshrc" ; then
+  echo note: existing config is identical to desired one
+  exit 0
+fi
+
 # Install a csh configuration file
 if [ ! -f "$HOME/.cshrc" ]; then
   ln "$DIR/original.cshrc" $HOME/.cshrc
